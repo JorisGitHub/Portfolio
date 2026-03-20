@@ -1,3 +1,31 @@
+/* Define color variables for both themes */
+:root {
+    --bg-primary: #0f172a;
+    --bg-secondary: #1e293b;
+    --text-primary: #f1f5f9;
+    --text-secondary: #94a3b8;
+    --accent: #38bdf8;
+    --accent-hover: #0284c7;
+    --card-bg: #1e293b;
+    --skill-bg: #334155;
+    --shadow: rgba(0, 0, 0, 0.3);
+}
+
+/* Light theme */
+@media (prefers-color-scheme: light) {
+    :root {
+        --bg-primary: #f8fafc;
+        --bg-secondary: #f1f5f9;
+        --text-primary: #0f172a;
+        --text-secondary: #64748b;
+        --accent: #0284c7;
+        --accent-hover: #0ea5e9;
+        --card-bg: #ffffff;
+        --skill-bg: #e2e8f0;
+        --shadow: rgba(0, 0, 0, 0.1);
+    }
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -6,8 +34,9 @@
 
 body {
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #0f172a, #1e293b);
-    color: #f1f5f9;
+    background: linear-gradient(135deg, var(--bg-primary), var(--bg-secondary));
+    color: var(--text-primary);
+    transition: background 0.3s ease, color 0.3s ease;
 }
 
 /* Container */
@@ -28,18 +57,19 @@ h1 {
 }
 
 .tagline {
-    color: #94a3b8;
+    color: var(--text-secondary);
     margin-top: 10px;
 }
 
 /* Cards */
 .card {
-    background: #1e293b;
+    background: var(--card-bg);
+    color: var(--text-primary);
     padding: 25px;
     border-radius: 12px;
     margin-bottom: 25px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-    transition: transform 0.2s ease;
+    box-shadow: 0 10px 25px var(--shadow);
+    transition: transform 0.2s ease, background 0.3s ease, color 0.3s ease;
 }
 
 .card:hover {
@@ -48,7 +78,7 @@ h1 {
 
 h2 {
     margin-bottom: 15px;
-    color: #38bdf8;
+    color: var(--accent);
 }
 
 /* Skills */
@@ -59,10 +89,12 @@ h2 {
 }
 
 .skills-grid span {
-    background: #334155;
+    background: var(--skill-bg);
+    color: var(--text-primary);
     padding: 8px 12px;
     border-radius: 20px;
     font-size: 0.9rem;
+    transition: background 0.3s ease, color 0.3s ease;
 }
 
 /* Buttons */
@@ -83,30 +115,33 @@ h2 {
 
 /* Primary (LinkedIn) */
 .primary {
-    background: #0ea5e9;
+    background: var(--accent);
     color: white;
+    transition: opacity 0.3s ease;
 }
 
 .primary:hover {
-    background: #0284c7;
+    opacity: 0.8;
 }
 
 /* Secondary (Resume) */
 .secondary {
     background: transparent;
-    border: 2px solid #38bdf8;
-    color: #38bdf8;
+    border: 2px solid var(--accent);
+    color: var(--accent);
+    transition: background 0.3s ease, color 0.3s ease;
 }
 
 .secondary:hover {
-    background: #38bdf8;
-    color: #0f172a;
+    background: var(--accent);
+    color: white;
 }
 
 /* Footer */
 footer {
     text-align: center;
     margin-top: 30px;
-    color: #64748b;
+    color: var(--text-secondary);
     font-size: 0.9rem;
+    transition: color 0.3s ease;
 }
