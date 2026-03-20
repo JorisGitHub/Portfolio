@@ -5,6 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Joris Gueriot | Portfolio</title>
     <link rel="stylesheet" href="styles.css">
+    <script>
+        // Detect system preference on load and apply saved theme preference
+        function initTheme() {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme) {
+                document.documentElement.setAttribute('data-theme', savedTheme);
+            }
+        }
+        // Initialize theme before rendering
+        initTheme();
+    </script>
 </head>
 <body>
 
@@ -63,6 +74,14 @@
 
     </div>
 
+    <script>
+        // Toggle theme function
+        function toggleTheme() {
+            const current = document.documentElement.getAttribute('data-theme') || 'auto';
+            const next = current === 'dark' ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', next);
+            localStorage.setItem('theme', next);
+        }
+    </script>
 </body>
 </html>
-
