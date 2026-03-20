@@ -15,7 +15,7 @@ Link to my linkedin profile: https://www.linkedin.com/in/joris-gueriot-922792221
 
 ```
 Portfolio Folder/
-├── Portfolio.html          # Main HTML file with portfolio content
+├── index.html              # Main HTML file with portfolio content
 ├── styles.css              # Stylesheet with theme variables
 ├── README.md               # This file
 └── resume.pdf              # Resume document (referenced in portfolio)
